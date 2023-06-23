@@ -91,8 +91,7 @@ const users = [
 ]
 
 const sortUsert = users.sort(function (a, b) {
-    console.log(a, 'a')
-    console.log(b, 'b')
+
 
     let nameA = a.nama.toUpperCase();
     let nameB = b.nama.toUpperCase();
@@ -156,3 +155,124 @@ console.log(sortUsert)
 
 
 // console.log(buah.length)
+// let isValue = false;
+// console.log(isValue, 'hal')
+// while (isValue == false) {
+//     isValue = confirm('Anda Yakin?')
+// }
+
+//Ajax 
+//fetch
+//axios
+
+// function getUsers() {
+//     console.log("get users")
+// }
+
+// const getLogin = (user) => {
+//     console.log(user)
+//     // const { nama, usia } = user
+//     // console.log(nama, 'halo')
+//     // console.log(usia, 'halo')
+// }
+
+// const user = {
+//     nama: 'Rizal',
+//     usia: 20
+// }
+
+
+// getLogin('Rizal')
+
+
+// getUsers()
+
+// function satu() {
+//     console.log('satu')
+// }
+// function dua() {
+//     setTimeout(() => {
+//         console.log('eksekusi dua')
+//     }, 2000)
+// }
+// function tiga() {
+//     console.log('eksekusi tiga')
+
+// }
+
+// satu()
+// dua()
+// tiga()
+
+function login(username) {
+    const token = [Math.random() * 12345678]
+    return new Promise((success, failed) => {
+        setTimeout(() => {
+            if (username == 'Rizal') {
+                success({ username, token })
+            } else {
+                failed("Sorry wrong username")
+            }
+        }, 2000)
+    })
+    // setTimeout(() => {
+    //     // return { token, username }
+    //     callback({ token, username })
+    // }, 2000)
+}
+
+function getUser(token, callback) {
+    setTimeout(() => {
+        if (token) callback({ access_token: "key" })
+    }, 2000)
+}
+
+function getPictures(access_token, callback) {
+    setTimeout(() => {
+        const pictures = ['1.jpg', '2.jpg']
+        if (access_token) callback(pictures)
+    }, 2000)
+}
+
+
+//CALLBACK
+// login('Rizal', function (response) {
+//     getUser(response, function (response) {
+//         getPictures(response, function (response) {
+//             console.log(response, 'halo')
+//         })
+
+//     })
+// })
+
+
+
+
+
+
+
+// const access_token = getUser(token)
+// console.log(access_token)
+
+// function getPictures(access_token) {
+//     setTimeout(() => {
+//         const pictures = ['1.jpg', '2.jpg']
+//         if (access_token) return pictures
+//     }, 2000)
+// }
+
+// login('Rizal', function (response) {
+//     console.log(response, 'dapet token , loading')
+
+//     getUser(response.token, function (response) {
+//         console.log(response, 'dapet accesstoken , loading')
+
+//         console.log(response.access_token, 'halo')
+//     })
+
+// })
+// const access_token = getUser(token)
+
+// console.log(access_token, 'halo')
+
+
